@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
+apply plugin: 'kotlin-kapt'
+
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -21,6 +23,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        disable 'NeedOnRequestPermissionsResult'
+    }
 }
 
 dependencies {
@@ -35,4 +40,9 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.0.2'
     implementation 'com.squareup.retrofit2:converter-jackson:2.3.0'
     implementation 'com.android.support:cardview-v7:27.0.2'
+    implementation("com.github.hotchemi:permissionsdispatcher:${permission_dispatcher_version}") {
+        // if you don't use android.app.Fragment you can exclude support for them
+        exclude module: "support-v13"
+    }
+    kapt "com.github.hotchemi:permissionsdispatcher-processor:${permission_dispatcher_version}"
 }

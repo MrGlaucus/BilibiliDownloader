@@ -24,6 +24,7 @@ class ConvertService : Service() {
     var id = 1
     override fun onCreate() {
         mNotifyManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        @Suppress("DEPRECATION")
         mBuilder = Notification.Builder(applicationContext)
         mBuilder.setContentText("正在降维...")
                 .setSmallIcon(R.mipmap.ic_launcher)
@@ -79,4 +80,6 @@ class ConvertService : Service() {
         super.onDestroy()
         Log.d(TAG, "Service Destroyed")
     }
+
+
 }
