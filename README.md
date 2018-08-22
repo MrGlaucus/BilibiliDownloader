@@ -1,3 +1,4 @@
+# 【Deprecated】See [二向箔(DualVectorFoil)](https://github.com/MrGlaucus/DualVectorFoil)
 # BilibiliDownloader
 BilibiliDownloader是一个可以将Bilibili官方APP下载的视频缓存进行“降维打击”（原谅这个三体脑残粉），转换成MP3格式的音频文件的APP
 ## 操作步骤
